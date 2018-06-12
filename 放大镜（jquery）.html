@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 110px;
+            margin-top: 10px;
+        }
+
+        .left {
+            width: 300px;
+            height: 300px;
+            margin: 100px 10px 0 100px;
+            float: left;
+            position: relative;
+        }
+
+        .right {
+            width: 300px;
+            height: 300px;
+            margin-top: 100px;
+            /*position: absolute;*/
+            /*top: 100px;*/
+            /*left: 410px;*/
+            float: left;
+        }
+
+        .mask {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(118, 119, 180, .4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+      /*  .right img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }*/
+
+        /*ul li {*/
+            /*float: left;*/
+            /*margin-right: 20px;*/
+        /*}*/
+
+        /*ul li img {*/
+            /*width: 80px;*/
+            /*height: 80px;*/
+        /*}*/
+
+        /*.border {*/
+            /*border: 2px solid red;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="left">
+    <img src="../imgs/1.jpg" alt="" width="300" height="300">
+    <div class="mask"></div>
+</div>
+<div class="right">
+    <img src="../imgs/1.jpg" alt="" width="300" height="300">
+</div>
+<!--
+<ul>
+    <li class="border"><img src="../imgs/1.jpg" alt=""></li>
+    <li><img src="../imgs/2.jpg" alt=""></li>
+    <li><img src="../imgs/3.jpg" alt=""></li>
+</ul>
+-->
+
+</body>
+<!--<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+    $('.left').hover(function (e) {
+        $('.mask').show();
+        $('.right').show();
+        $(this).mousemove(function (e) {
+            var ev = e || event;
+            var mouseX = ev.clientX;
+            var mouseY = ev.clientY;
+            var maskLeft = mouseX - $(this).offset().left - 50;
+            var maskTop = mouseY - $(this).offset().top - 50;
+            maskLeft = maskLeft > 0 ? maskLeft : 0;
+            maskLeft = maskLeft < 200 ? maskLeft : 200;
+            maskTop = maskTop > 0 ? maskTop : 0;
+            maskTop = maskTop < 200 ? maskTop : 200;
+            $('.mask').css({'left': maskLeft, 'top': maskTop});
+            var imgLeft = maskLeft * 600 / 200;
+            var imgTop = maskTop * 600 / 200;
+            $('.right img').css({'left': -imgLeft, 'top': -imgTop})
+        })
+    },function () {
+        $('.mask').hide();
+        $('.right').hide();
+    });
+
+    var data = ['../imgs/1.jpg', '../imgs/2.jpg', '../imgs/3.jpg'];
+    $('li').click(function () {
+        var index = $(this).index();
+        $('.left img').attr('src', data[index]);
+        $('.right img').attr('src', data[index]);
+        $(this).addClass('border').siblings().removeClass('border');
+    })
+
+
+</script>-->
+</html>
